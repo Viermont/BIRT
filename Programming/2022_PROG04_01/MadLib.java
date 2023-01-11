@@ -15,10 +15,10 @@ import java.io.*;
 public class MadLib {
 
     /*
-	 * Método principal: crea un objeto de tipo Scanner, llama al método intro, después al método menu,
-	 * al que le pasa el objeto de tipo Scanner teclado como parámetro, para finalizar muestra un mensaje
-    * de despedida y cierra el objeto Scanner teclado.
-	 */
+     * Método principal: crea un objeto de tipo Scanner, llama al método intro, después al método menu,
+     * al que le pasa el objeto de tipo Scanner teclado como parámetro, para finalizar muestra un mensaje
+     * de despedida y cierra el objeto Scanner teclado.
+     */
     public static void main (String[] args) throws FileNotFoundException {
         Scanner teclado = new Scanner(System.in);
         intro();
@@ -28,9 +28,9 @@ public class MadLib {
     }
 
     /*
-	  * Método intro: explica lo que hace el programa.
-	  * No tiene parámetros y no devuelve ningún valor.
-	  */
+     * Método intro: explica lo que hace el programa.
+     * No tiene parámetros y no devuelve ningún valor.
+     */
     public static void intro() {
         System.out.println("\nBienvenidos y bienvenidas al juego de los cuentos locos.\n"
         + "El programa te pedirá que introduzcas una serie de palabras\n"
@@ -40,7 +40,7 @@ public class MadLib {
     }
 
     /*
-	  * Método menu: menú principal del programa, pide elegir por teclado una de las 3 opciones, llama
+     * Método menu: menú principal del programa, pide elegir por teclado una de las 3 opciones, llama
      * al método compruebaMenu, dependiendo del valor recibido de vuelta decide c = crear MadLib (llama
      * al método crear), v = ver MadLib (llama al método ver), s = salir (cambia el valor booleano para
      * que no cumpla la condición y salga) o r = repetir menú (repite el bucle). En caso contrario
@@ -48,7 +48,7 @@ public class MadLib {
      * Parámetros:    Scanner teclado: objeto de tipo Scanner que se usará para recibir por teclado la
      *                    elección del usuario.
      * No devuelve ningún valor.
-	  */
+     */
     public static void menu(Scanner teclado) throws FileNotFoundException {
         boolean volverMenu = true;
         while (volverMenu) {
@@ -99,7 +99,7 @@ public class MadLib {
      * Parámetros:    Scanner teclado: objeto de tipo Scanner que se usará para recibir por teclado las
      *                    elecciones del usuario.
      * No devuelve ningún valor.
-    */
+     */
     public static void crear(Scanner teclado) throws FileNotFoundException {
         //Guarda nombre fichero entrada
         System.out.print("\n\nCrear un cuento:");
@@ -149,7 +149,7 @@ public class MadLib {
      * Parámetros:    Scanner teclado: objeto de tipo Scanner que no se usará en el método pero
      *                    si se pasará como parámetro a otros métodos.
      * No devuelve nada.
-    */
+     */
     public static void ver(Scanner teclado) {
         System.out.print("\n\nVer un cuento:");
         String ficheroEntrada = compruebaNombre(teclado);
@@ -160,7 +160,7 @@ public class MadLib {
      * su nombre. En caso que no exista solicita de nuevo el nombre del fichero.
      * Parámetros:    Scanner teclado: objeto de tipo Scanner para leer por teclado el nombre del fichero.
      * Return:        devuelve una String con el nombre del fichero a leer.
-    */
+     */
     public static String compruebaNombre(Scanner teclado) {
         System.out.print("\nNombre del fichero que quieres leer: ");
         String ficheroEntrada = teclado.next();
@@ -185,7 +185,7 @@ public class MadLib {
      *                    si se pasará como parámetro a otro método.
      *                boolean contar: valor booleano que indica si sólo se cuantan las líneas del
      *                    fichero o si también se mustran por consola dichas líneas.
-    */
+     */
     public static int leerFichero(String ficheroEntrada, Scanner teclado, boolean contar) {
         int contLineas = 0;
         File fichero = new File(ficheroEntrada);
@@ -222,7 +222,7 @@ public class MadLib {
      *                Scanner teclado: objeto de tipo Scanner para que el usuario pueda teclear la
      *                    nueva palabra.
      * Return:        Devuelve una String con la palabra modificada.
-    */
+     */
     public static String cambiaPalabras(String palabra, Scanner teclado) {
         palabra = palabra.replaceAll("-"," ");
         System.out.print("\n" + palabra + ": ");
